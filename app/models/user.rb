@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  enum role: Settings.roles
+  after_initialize :set_default_role, if: :new_record?
+
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
   has_many :readings, dependent: :destroy
@@ -12,4 +15,8 @@ class User < ActiveRecord::Base
     foreign_key: "followed_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :following, through: :active_relationships, source: :followed
+
+  def set_default_role
+    self.role ||= :user
+  end
 end
