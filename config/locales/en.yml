@@ -20,3 +20,8 @@ en:
     log_in: "Log in"
   link:
     sign_up_with: "Sign in with #{provider.to_s.titleize}"
+  admin:
+    book: "Books"
+    category: "Categories"
+    user: "Users"
+    request: "Request"
