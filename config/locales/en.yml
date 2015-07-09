@@ -22,12 +22,12 @@ en:
     sign_up_with: "Sign in with #{provider.to_s.titleize}"
   admin:
     book: "Books"
-    category: "Categories"
     user: "Users"
     request: "Request"
     name: "Name"
     content: "Content"
     category:
+      label: "Category"
       edit-title: "Edit Category"
       list-title: "Listing Categories"
       new-category: "New Category"
@@ -36,6 +36,8 @@ en:
       updated-success: "Category was successfully updated"
       destroy-success: "Category was successfully destroyed"
       destroy-failed: "Category was faithfully destroyed"
+      activate: "Activate"
+      deactivate: "De-Activate"
   feature:
     show: "Show"
     back: "Back"
