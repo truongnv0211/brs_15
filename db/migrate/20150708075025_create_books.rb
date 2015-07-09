@@ -8,6 +8,7 @@ class CreateBooks < ActiveRecord::Migration
       t.float :rate
       t.string :content
       t.string :picture
+      t.integer :category_id
 
       t.timestamps null: false
     end

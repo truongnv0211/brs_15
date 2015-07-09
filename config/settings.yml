@@ -1,3 +1,5 @@
-  roles:
-    - user
-    - admin
+roles:
+  - user
+  - admin
+number:
+  per_page: 10
