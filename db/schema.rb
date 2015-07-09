@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150708075538) do
     t.float    "rate"
     t.string   "content"
     t.string   "picture"
+    t.integer  "category_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
