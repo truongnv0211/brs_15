@@ -63,6 +63,8 @@ en:
     administration: "Administration"
     all-book: "All Book"
     all-user: "All User"
+  books:
+    rating: "Rating"
     submit: "Submit"
     activities: "Activities %{count}"
     readings: "Readings %{count}"

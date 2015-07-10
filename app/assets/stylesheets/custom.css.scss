@@ -147,3 +147,25 @@ footer {
     color: $state-danger-text;
   }
 }
+.rating{
+  height: 14px;
+  margin-left: -3px;
+  position: relative;
+  width: 77px;
+  div{
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+  }
+  .stars{
+    display: block;
+    height: 14px;
+    line-height: 14px;
+    letter-spacing: 3px;
+    padding: 0 3px;
+    width: 71px;
+    &:before{
+      content: "\e006\e006\e006\e006\e006"
+    }
+  }
+}

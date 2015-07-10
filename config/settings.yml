@@ -2,13 +2,16 @@ number:
   per_page: 10
   short_miximum: 5
   user_per_page: 15
+  count: 5
+  round: 2
 admin:
   books:
-    picture_height: 245
-    picture_width: 165
+    picture_height: 220
+    picture_width: 150
     picture_height300: 420
     picture_width300: 280
     picture_default: "book_default.jpg"
+    picture_default_2: "bookdefault2.jpg"
     max_string: 10
     pages: 12
     max_rate: 5
