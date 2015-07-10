@@ -1,0 +1,12 @@
+<div class="row">
+  <%= render @books if @books.any? %>
+</div>
+<div class="row">
+  <div class="col-xs-10" align="left">
+    <%= will_paginate @books %>
+  </div>
+  <div class="col-xs-2" align="right">
+    <br><br>
+    <%= button_to t("admin.new_book"), [:new, :admin, :book], class: "btn btn-primary w150", method: :get %>
+  </div>
+</div>
