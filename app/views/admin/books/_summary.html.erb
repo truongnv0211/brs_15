@@ -1,0 +1,34 @@
+<table>
+  <tr>
+    <th class="w15pc"><%= t "books.title" %></th>
+    <td>: <%= book.title[0..Settings.admin.books.max_string] %></td>
+  </tr>
+  <tr>
+    <th><%= t "books.category" %></th>
+    <td>: <%= book.category.name %></td>
+  </tr>
+  <tr>
+    <th><%= t "books.author" %></th>
+    <td>: <%= book.author %></td>
+  </tr>
+  <tr>
+    <th><%= t "books.publish" %></th>
+    <td>: <%= book.publish_date %></td>
+  </tr>
+  <tr>
+    <th><%= t "books.no_page" %></th>
+    <td>: <%= book.number_page %></td>
+  </tr>
+  <tr>
+    <th><%= t "books.rate" %></th>
+    <td>: <%= book.rate %></td>
+  </tr>
+  <tr>
+    <th><%= t "books.favorite" %></th>
+    <td>: <%= book.favorites.count %></td>
+  </tr>
+  <tr>
+    <th><%=  t "books.review" %></th>
+    <td>: <%= book.reviews.count %></td>
+  </tr>
+</table>
