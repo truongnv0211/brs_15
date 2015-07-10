@@ -42,4 +42,10 @@ en:
     edit: "Edit"
     destroy: "Destroy"
     question: "Are you sure???"
-
+  user:
+    favorite: "Favorite"
+    reading: "Reading"
+    profile: "Profile"
+    administration: "Administration"
+    all-book: "All Book"
+    all-user: "All User"
