@@ -1,6 +1,19 @@
-roles:
-  - user
-  - admin
 number:
   per_page: 10
   short_miximum: 5
+admin:
+  books:
+    picture_height: 245
+    picture_width: 165
+    picture_height300: 420
+    picture_width300: 280
+    picture_default: "book_default.jpg"
+    max_string: 10
+    pages: 12
+    max_rate: 5
+    max_number_page: 50000
+    min_number_page: 1
+    min_title_length: 6
+roles:
+  - user
+  - admin

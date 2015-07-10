@@ -10,10 +10,16 @@ gem "jbuilder"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "bootstrap-sass"
 gem "will_paginate"
+gem 'bootstrap-will_paginate', '0.0.10'
 gem "devise"
 gem "faker"
 gem "ransack"
 gem "rails_config"
+gem "carrierwave", "0.10.0"
+gem "mini_magick", "3.8.0"
+gem "fog", "1.23.0"
+gem "jquery-ui-rails"
+gem "jquery-turbolinks"
 
 group :development, :test do
   gem "byebug"
