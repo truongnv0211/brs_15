@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708075538) do
+ActiveRecord::Schema.define(version: 20150709074138) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "action"
@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(version: 20150708075538) do
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.string   "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "activate",   default: false, null: false
   end
 
   create_table "comments", force: :cascade do |t|

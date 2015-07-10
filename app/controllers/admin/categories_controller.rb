@@ -14,8 +14,9 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def create
-    if @category.create category_params
-      redirect_to [:admin, @category], notice: t("admin.category.created-success")
+    @category = Category.new category_params
+    if @category.save
+      redirect_to [:admin, @category], notice: t("admin.category.create-success")
     else
       render "new"
     end
@@ -41,12 +42,13 @@ class Admin::CategoriesController < ApplicationController
     redirect_to admin_categories_url
   end
 
+
   private
   def set_category
     @category = Category.find params[:id]
   end
 
   def category_params
-    params.require(:category).permit :name, :content
+    params.require(:category).permit :name, :content, :activate
   end
 end
