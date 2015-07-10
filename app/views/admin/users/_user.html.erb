@@ -1,0 +1,13 @@
+<tr>
+  <td><%= user.id %></td>
+  <td><%= user.name %></td>
+  <td><%= user.email %></td>
+  <td><%= user.created_at %></td>
+  <td><%= user.favorites.count %></td>
+  <td><%= user.readings.count %></td>
+  <td><%= user.reviews.count %></td>
+  <td><%= user.comments.count %></td>
+  <td><%= link_to t("feature.show"), admin_user_path(user) %></td>
+  <td><%= link_to t("feature.destroy"), admin_user_path(user), method: :delete,
+    data: {confirm: t("feature.question")} %></td>
+</tr>

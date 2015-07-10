@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     root "dashboards#home"
     resources :categories
     resources :books
+    resources :users, except: [:edit, :update]
   end
 
   devise_for :users

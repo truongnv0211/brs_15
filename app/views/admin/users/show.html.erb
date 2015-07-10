@@ -1,0 +1,47 @@
+<h1><%= @user.id %> - <%= @user.name %></h1>
+<div class="row">
+  <div class="col-md-3">
+    <h1>
+      <%= gravatar_for @user, size: Settings.user.gravantar_size230 %>
+    </h1>
+    <div class="col-md-6">
+      <%= link_to t("feature.back"), admin_users_path, class: "btn btn-block btn-primary" %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to t("admin-user.user-home"), "#", class: "btn btn-block btn-primary" %>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <br>
+    <table class="table table-condensed table-striped">
+      <tr>
+        <th><%= t "admin-user.email" %></th>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <th><%= t "admin-user.book-favorite" %></th>
+        <td><%= @user.favorites.count %></td>
+      </tr>
+      <tr>
+        <th><%= t "admin-user.book-read" %></th>
+        <td><%= @user.readings.count %></td>
+      </tr>
+      <tr>
+        <th><%= t "admin-user.total-review" %></th>
+        <td><%= @user.reviews.count %></td>
+      </tr>
+      <tr>
+        <th><%= t "admin-user.total-comment" %></th>
+        <td><%= @user.comments.count %></td>
+      </tr>
+      <tr>
+        <th><%= t "admin-user.total-request" %></th>
+        <td><%= @user.requests.count %></td>
+      </tr>
+      <tr>
+        <th><%= t "admin-user.total-like" %></th>
+        <td><%= @user.likes.count %></td>
+      </tr>
+    </table>
+  </div>
+</div>
