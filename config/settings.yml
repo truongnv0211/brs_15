@@ -24,3 +24,5 @@ roles:
 user:
   gravantar_size230: 230
   gravantar_size150: 150
+  max_string: 15
+  pages: 12

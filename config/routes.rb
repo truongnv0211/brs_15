@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   resources :books, only: :index
 
   devise_for :users
-  resources :users, only: :show
+  resources :users, only: [:index, :show]
 end

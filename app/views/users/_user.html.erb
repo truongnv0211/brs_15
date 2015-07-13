@@ -1,0 +1,11 @@
+<div class="col-xs-2">
+  <br>
+  <%= link_to gravatar_for(current_user, size: Settings.user.gravantar_size150), user %>
+  <br>
+  <h4><%= user.name.truncate(Settings.user.max_string) %></h4>
+  <h6 class="color-gray-10">
+    <table class="color-gray-8">
+      <%= render "summary", user: user %>
+    </table>
+  </h6>
+</div>
