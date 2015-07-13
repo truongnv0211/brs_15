@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="bg-img">
+    <div class="col-md-2" align="center">
+      <br>
+      <%= gravatar_for current_user, size: Settings.user.gravantar_size150 %>
+      <br><br>
+      <table class="table">
+        <%= render "summary", user: current_user %>
+      </table>
+    </div>
+    <div class="col-md-10">
+      <br><br><br><br><br>
+      <table class="w100pc">
+        <tr>
+          <td>
+            <h3 style="color: white" align="left">
+              <strong><%= current_user.name.capitalize %></strong>
+            </h3>
+          </td >
+          <td align="right">
+            <h3 style="color: white">
+              <span class="glyphicon glyphicon-cog" align="right"></span>
+            </h3>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -6,15 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 10.times do |n|
-  Category.create!(name: "Category" + n.to_s)
+  Category.create!(name: "Category" + n.to_s, content: "Content")
 end
 
 100.times do |n|
-  Book.create!(title: "Book" + n.to_s,
+  Book.create!(title: "BookBook" + n.to_s,
     publish_date: "2015/07/08",
     author: "Author" + n.to_s,
-    number_page: n,
-    content: "Content",
+    number_page: n + 100,
+    content: "Content content",
     category_id: 1
   )
 end
