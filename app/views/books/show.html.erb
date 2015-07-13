@@ -1,0 +1,63 @@
+<br><br>
+<div class="row">
+  <div class="col-md-3">
+    <%= image_tag @book.picture_url,
+      height: Settings.books.picutre_height330, width: Settings.books.picture_width250 %><br><br>
+  </div>
+  <div class="col-md-9">
+    <h1><%= @book.title %></h1>
+    <table class="table table-hover">
+      <tr>
+        <th><%= t "book.author" %>:</th>
+        <td><%= @book.author %></td>
+      </tr>
+      <tr>
+        <th><%= t "book.publish-date" %>:</th>
+        <td><%= @book.publish_date %></td>
+      </tr>
+      <tr>
+        <th><%= t "book.category" %>:</th>
+        <td><%= @book.category.name %></td>
+      </tr>
+      <tr>
+        <th><%= t "book.rate-avg" %>:</th>
+        <td>
+          <%= render "star", rating: @book.avg_rating %>
+          (<%= t "book.from-user", num_rating: @book.avg_rating, num_review: @book.reviews.count %>)
+        </td>
+      </tr>
+    </table>
+    <div>
+      <h3><%= t "book.content" %></h3>
+      <em><%= @book.content %></em>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-2">
+    <%= link_to t("book.write-review"), "#", class: "btn btn-primary btn-block", id: "create-review" %>
+  </div>
+  <div class="col-md-2">
+    <%= link_to t("book.add-favorite"), "#", class: "btn btn-primary btn-block" %>
+  </div>
+  <div class="col-md-2">
+    <div class="btn-group">
+      <button type="button" class="btn btn-block btn-primary dropdown-toggle" data-toggle="dropdown">
+        <%= t "book.mark-read" %><span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><%= link_to t("book.mark-reading"), "#" %></li>
+        <li><%= link_to t("book.mark-read"), "#" %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<hr>
+<div id="review-form">
+  <h3><%= t "book.write-new-review" %></h3>
+  <%= render "review_form" %>
+</div>
+<div>
+  <h3><%= t "book.review" %></h3>
+</div>

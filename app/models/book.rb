@@ -4,6 +4,8 @@ class Book < ActiveRecord::Base
   has_many :readings, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+
+
   validates :title, presence: true, length: {minimum: Settings.admin.books.min_title_length,
     message: I18n.t("admin.validate_title", min: Settings.admin.books.min_title_length)
   }
@@ -18,5 +20,9 @@ class Book < ActiveRecord::Base
   def picture_url
     return Settings.admin.books.picture_default_2 unless picture.present?
     picture.url
+  end
+
+  def avg_rating
+    self.reviews.average :rating
   end
 end

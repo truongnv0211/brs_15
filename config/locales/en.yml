@@ -85,3 +85,10 @@ en:
     total-request: "Total Request"
     total-like: "Total Like"
     new-user: "new-user"
+  book:
+    add-favorite: "Add to Favorite !!"
+    mark-reading: "Mark As Reading !!!"
+    mark-read: "Mark As Read !!!"
+    write-review: "Write Review !!"
+    create-review: "Create Review !!"
+    from-user: "%{num_rating} from %{num_review} review"
