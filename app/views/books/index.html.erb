@@ -1,8 +1,7 @@
 <div class="row">
-  <%= render @books if @books.any? %>
+  <%= render "books/form_filter" %>
 </div>
 <div class="row">
-  <div class="col-xs-10" align="left">
-    <%= will_paginate @books %>
-  </div>
+  <%= render @books%>
 </div>
+<%= will_paginate %>

@@ -14,4 +14,9 @@ class Book < ActiveRecord::Base
   }
 
   mount_uploader :picture, PictureUploader
+
+  def picture_url
+    return Settings.admin.books.picture_default_2 unless picture.present?
+    picture.url
+  end
 end
