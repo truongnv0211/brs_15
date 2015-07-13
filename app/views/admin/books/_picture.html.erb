@@ -1,5 +1,0 @@
-<% if book.picture? %>
-  <%= image_tag book.picture.url, height: height, width: width %>
-<% else %>
-  <%= image_tag Settings.admin.books.picture_default, height: height, width: width %>
-<% end %>
