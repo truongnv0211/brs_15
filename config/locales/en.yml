@@ -63,9 +63,6 @@ en:
     administration: "Administration"
     all-book: "All Book"
     all-user: "All User"
-  books:
-    rating: "Rating"
-    submit: "Submit"
     activities: "Activities %{count}"
     readings: "Readings %{count}"
     comments: "Comments %{count}"
@@ -73,6 +70,9 @@ en:
     requests: "Requests %{count}"
     following: "Following %{count}"
     followers: "Followers %{count}"
+  books:
+    rating: "Rating"
+    submit: "Submit"
   admin-user:
     create-user: "Create User"
     create-success: "User was successfully created"
