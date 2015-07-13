@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709074138) do
+ActiveRecord::Schema.define(version: 20150714020600) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "action"
@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 20150709074138) do
     t.string   "publish_date"
     t.string   "author"
     t.integer  "number_page"
-    t.float    "rate"
+    t.float    "rate",         default: 0.0
     t.string   "content"
     t.string   "picture"
     t.integer  "category_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "categories", force: :cascade do |t|
