@@ -7,7 +7,8 @@ class Review < ActiveRecord::Base
 
   private
   def set_avarage_rating
-    rate = reviews.avarage :rating
+    rate = self.book.reviews.average :rating
     book.rate = rate if rate
+    book.save
   end
 end

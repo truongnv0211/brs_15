@@ -13,7 +13,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    @review = @book.reviews.build
+    @reviews = @book.reviews
   end
 
   private

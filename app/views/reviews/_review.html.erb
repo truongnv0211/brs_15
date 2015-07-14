@@ -1,0 +1,9 @@
+<li id="review-<%= review.id %>">
+  <%= link_to gravatar_for(review.user, size: Settings.review.picutre_size50), review.user %>
+  <span class="user"><%= link_to review.user.name, review.user %></span>
+  <span class="content">
+    <strong><%= review.subject %></strong>
+    <%= render "star", rating: review.rating %>
+    <%= review.content %>
+  </span>
+</li>

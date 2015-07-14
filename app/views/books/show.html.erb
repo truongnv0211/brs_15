@@ -56,8 +56,11 @@
 <hr>
 <div id="review-form">
   <h3><%= t "book.write-new-review" %></h3>
-  <%= render "review_form" %>
+  <%= render "reviews/review_form" %>
 </div>
 <div>
   <h3><%= t "book.review" %></h3>
+</div>
+<div class="review">
+  <%= render @reviews if @reviews.any? %>
 </div>
