@@ -22,8 +22,8 @@
       <tr>
         <th><%= t "book.rate-avg" %>:</th>
         <td>
-          <%= render "star", rating: @book.avg_rating %>
-          (<%= t "book.from-user", num_rating: @book.avg_rating, num_review: @book.reviews.count %>)
+          <%= render "star", rating: @book.rate %>
+          (<%= t "book.from-user", num_rating: @book.rate, num_review: @book.reviews.count %>)
         </td>
       </tr>
     </table>
