@@ -25,12 +25,3 @@ end
     category_id: 1
   )
 end
-100.times do |n|
-  5.times do |m|
-    Review.create!(subject: "This is subject of rating !!",
-      content: "Content of rating",
-      rating: rand(1..5),
-      user_id: 1,
-      book_id: n)
-  end
-end

@@ -93,3 +93,4 @@ en:
     write-review: "Write Review !!"
     create-review: "Create Review !!"
     from-user: "%{num_rating} from %{num_review} review"
+    review-create-success: "Review create successfully"

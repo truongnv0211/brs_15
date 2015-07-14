@@ -173,3 +173,47 @@ footer {
 #review-form{
   display: none;
 }
+.review {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .rating{
+    margin-left: 25px;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+.rating {
+  margin: auto 0;
+}
+
+li.rating_star {
+  display: block;
+  float: left;
+  width: 16px;
+  height: 16px;
+  background: image-url("star.gif") 0 0;
+}
+
+li.rating_star.on {
+  background: image-url("star.gif") 0 16px;
+}

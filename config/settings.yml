@@ -29,3 +29,5 @@ user:
 books:
     picutre_height330: 330
     picture_width250: 250
+review:
+    picture_size50: 50
