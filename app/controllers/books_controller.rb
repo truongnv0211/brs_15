@@ -13,7 +13,8 @@ class BooksController < ApplicationController
   end
 
   def show
-    @reviews = @book.reviews
+    @reviews = @book.reviews.includes :user, :comments
+    @comment = current_user.comments.build
   end
 
   private

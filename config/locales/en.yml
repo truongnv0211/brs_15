@@ -74,6 +74,10 @@ en:
     requests: "Requests %{count}"
     following: "Following %{count}"
     followers: "Followers %{count}"
+    confirm: "Confirm"
+    comment-success: "Comment was successfully created"
+    comment-failed: "Comment was unsuccessfully created"
+    commented: "commented"
   admin-user:
     create-user: "Create User"
     create-success: "User was successfully created"

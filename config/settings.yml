@@ -27,7 +27,8 @@ user:
   max_string: 15
   pages: 12
 books:
-    picutre_height330: 330
-    picture_width250: 250
+  picutre_height330: 330
+  picture_width250: 250
+  mg-left: 100px
 review:
-    picture_size50: 50
+  picture_size50: 50
