@@ -1,0 +1,11 @@
+<%= form_for @review do |f| %>
+  <%= f.label :rating %><br>
+
+  <%= f.label :subject %>
+  <%= f.text_field :subject, class: "form-control"%>
+
+  <%= f.label :content %>
+  <%= f.text_area :content, class: "form-control" %><br>
+
+  <%= f.submit t("book.create-review"), class: "btn btn-primary pull-right" %>
+<% end %><br><br>
