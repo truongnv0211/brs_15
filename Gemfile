@@ -21,6 +21,7 @@ gem "fog", "1.23.0"
 gem "jquery-ui-rails"
 gem "jquery-turbolinks"
 gem "cancancan"
+gem "best_in_place", "~> 3.0.1"
 
 group :development, :test do
   gem "byebug"
