@@ -1,5 +1,5 @@
 <% form_id = "book_#{@book.id}_rating" %>
-<%= form_for current_user.reviews.build , html: {class: "star_rating_form", multipart: true} do |f| %>
+<%= form_for review, html: {class: "star_rating_form", multipart: true} do |f| %>
   <%= f.hidden_field :book_id, value: @book.id %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :rating, id: "#{form_id}", value: 0 %>

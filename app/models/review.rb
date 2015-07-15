@@ -3,7 +3,8 @@ class Review < ActiveRecord::Base
   belongs_to :user
   has_many :comments, dependent: :destroy
 
-  after_create :set_avarage_rating
+  after_save :set_avarage_rating
+  after_destroy :set_avarage_rating
 
   private
   def set_avarage_rating
