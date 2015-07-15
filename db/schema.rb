@@ -88,8 +88,9 @@ ActiveRecord::Schema.define(version: 20150714020600) do
     t.string   "author"
     t.string   "description"
     t.string   "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "status",      default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "reviews", force: :cascade do |t|

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
   root "static_pages#home"
 
   get "help" => "static_pages#help"
@@ -8,6 +10,9 @@ Rails.application.routes.draw do
   resources :books
   resources :reviews
   resources :comments
+  resources :requests
+  resources :users, only: [:index, :show]
+  resources :favorites, only: [:index, :create, :destroy]
 
   namespace :admin do
     root "dashboards#home"
@@ -15,8 +20,4 @@ Rails.application.routes.draw do
     resources :books
     resources :users, except: [:edit, :update]
   end
-
-  devise_for :users
-  resources :users, only: [:index, :show]
-  resources :favorites, only: [:index, :create, :destroy]
 end
