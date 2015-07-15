@@ -2,5 +2,5 @@
   <br>
   <%= link_to image_tag(book.picture_url, height: Settings.admin.books.picture_height, width: Settings.admin.books.picture_width), book %>
   <br>
-  <h6 class="color-gray-10"><%= render "summary", book: book %></h6>
+  <h6 class="color-gray-10"><%= render "books/summary", book: book %></h6>
 </div>

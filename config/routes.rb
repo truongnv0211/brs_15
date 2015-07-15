@@ -16,8 +16,6 @@ Rails.application.routes.draw do
     resources :users, except: [:edit, :update]
   end
 
-  resources :books, only: [:index, :show]
-
   devise_for :users
   resources :users, only: [:index, :show]
   resources :favorites, only: [:index, :create, :destroy]

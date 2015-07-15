@@ -3,7 +3,7 @@
     <div class="caption">
       <h4><%= link_to book.title.truncate(Settings.admin.books.max_string), "#" %></h4>
       <p><%= book.author %></p>
-      <%= render "star", rating: book.rate %>
+      <%= render "books/star", rating: book.rate %>
     </div>
   </div>
 </div>
