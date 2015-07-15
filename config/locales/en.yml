@@ -88,6 +88,7 @@ en:
     new-user: "new-user"
   book:
     add-favorite: "Add to Favorite !!"
+    remove-favorite: "Remove Favorite !!"
     mark-reading: "Mark As Reading !!!"
     mark-read: "Mark As Read !!!"
     write-review: "Write Review !!"

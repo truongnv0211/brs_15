@@ -22,4 +22,12 @@ class User < ActiveRecord::Base
   def set_default_role
     self.role ||= :user
   end
+
+  def add_favorite book
+    Favorite.create user_id: self.id, book_id: book.id
+  end
+
+  def added_favorite? book
+    self.favorited_books.include? book
+  end
 end

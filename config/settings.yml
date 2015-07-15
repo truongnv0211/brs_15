@@ -26,6 +26,11 @@ user:
   gravantar_size150: 150
   max_string: 15
   pages: 12
+  picutre_height330: 330
+  picture_width250: 250
+favorites:
+  create: "create"
+  destroy: "destroy"
 books:
     picutre_height330: 330
     picture_width250: 250
