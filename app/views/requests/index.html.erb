@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="bg-img">
+    <div class="col-md-2" align="center">
+      <br>
+      <%= gravatar_for @user, size: Settings.user.gravantar_size150 %>
+      <br><br>
+      <table class="table">
+        <%= render "users/summary", user: @user %>
+      </table>
+    </div>
+    <div class="col-md-10">
+      <br><br><br><br><br>
+      <%= render "users/header", user: @user %>
+      <div class="table-responsive">
+        <table class="table table-border">
+          <tr>
+            <td class="active"><h4><b><%= t "requests.book_name" %></b></h4>
+            </td>
+            <td class="success"><h4><b><%= t "requests.author" %></b></h4></td>
+            <td class="warning"><h4><b><%= t "requests.description" %></b></h4>
+            </td>
+            <td class="info"><h4><b><%= t "requests.status" %></b></h4></td>
+            <td class="danger"><h4><b><%= t "requests.action" %></b></h4></td>
+          </tr>
+          <%= render @requests %>
+          <%= will_paginate %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

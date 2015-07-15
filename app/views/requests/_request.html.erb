@@ -1,0 +1,9 @@
+<tr>
+  <td class="active"><%= request.book_name %></td>
+  <td class="success"><%= request.author %></td>
+  <td class="warning"><%= request.description %></td>
+  <td class="info"><%= request.status %></td>
+  <td class="danger">
+    <%= link_to "Delete", request, method: :delete, data: {confirm: t("feature.destroy")} %>
+  </td>
+</tr>

@@ -5,6 +5,7 @@ class CreateRequests < ActiveRecord::Migration
       t.string :author
       t.string :description
       t.string :user_id
+      t.integer :status, default: 0
 
       t.timestamps null: false
     end

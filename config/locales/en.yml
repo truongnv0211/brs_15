@@ -101,6 +101,13 @@ en:
     update-review: "Update Review"
     from-user: "%{num_rating} from %{num_review} review"
     review-create-success: "Review create successfully"
+  requests:
+    book_name: "Name"
+    author: "Author"
+    description: "Description"
+    status: "Status"
+    action: "Action"
+    destroy_success: "Request was destroy successfully"
     review-update-success: "Review update successfully"
     review-delete-success: "Review delete successfully"
     review-create-failed: "Review create failed"
