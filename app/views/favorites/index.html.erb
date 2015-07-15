@@ -5,12 +5,18 @@
       <%= gravatar_for @user, size: Settings.user.gravantar_size150 %>
       <br><br>
       <table class="table">
-        <%= render "summary", user: @user %>
+        <%= render "users/summary", user: @user %>
       </table>
     </div>
     <div class="col-md-10">
       <br><br><br><br><br>
       <%= render "users/header", user: @user %>
+      <h3><%= t "favorite.favorites" %></h3>
+      <div class="col-md-12">
+        <%= render @books %>
+      </div>
+      <%= will_paginate @books %>
+      <%= render "suggest_books", suggest_books: @suggest_books if @user || current_user %>
     </div>
   </div>
 </div>
