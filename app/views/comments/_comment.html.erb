@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+  <div class="panel-header">
+    <h4><%= comment.user.name %> <%= t "books.commented" %>
+      <abbr title="<%= comment.created_at %>">
+        <%= time_ago_in_words(comment.created_at) %>
+      </abbr>
+    </h4>
+  </div>
+  <div class="panel-footer">
+    <%= comment.content %>
+  </div>
+</div>

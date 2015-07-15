@@ -203,7 +203,7 @@ footer {
 }
 
 .rating {
-  margin: auto 0;
+  padding-left: 40px;
 }
 
 li.rating_star {
@@ -216,4 +216,7 @@ li.rating_star {
 
 li.rating_star.on {
   background: image-url("star.gif") 0 16px;
+}
+.mg-left {
+  margin-left: 100px;
 }
