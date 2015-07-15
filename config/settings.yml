@@ -37,3 +37,7 @@ books:
   mg-left: 100px
 review:
   picture_size50: 50
+favorite:
+  books:
+    pages: 6
+    suggest_un_favorite_books: 5

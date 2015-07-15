@@ -63,10 +63,6 @@ en:
     administration: "Administration"
     all-book: "All Book"
     all-user: "All User"
-  books:
-    favorite: "Favorited"
-    rating: "Rating"
-    submit: "Submit"
     activities: "Activities %{count}"
     readings: "Readings %{count}"
     comments: "Comments %{count}"
@@ -78,6 +74,10 @@ en:
     comment-success: "Comment was successfully created"
     comment-failed: "Comment was unsuccessfully created"
     commented: "commented"
+  books:
+    favorite: "Favorited"
+    rating: "Rating"
+    submit: "Submit"
   admin-user:
     create-user: "Create User"
     create-success: "User was successfully created"
