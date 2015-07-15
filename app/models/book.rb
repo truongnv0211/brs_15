@@ -15,6 +15,10 @@ class Book < ActiveRecord::Base
 
   mount_uploader :picture, PictureUploader
 
+  scope :un_favorite, ->user{where("id NOT IN (SELECT book_id FROM favorites WHERE user_id = ?)", user.id)}
+  scope :suggest_un_favorite_books, ->user{Book.un_favorite(user).order("random()")
+                                               .limit(Settings.favorite.books
+                                               .suggest_un_favorite_books)}
   def picture_url
     return Settings.admin.books.picture_default_2 unless picture.present?
     picture.url

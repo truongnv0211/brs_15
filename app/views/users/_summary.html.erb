@@ -2,7 +2,7 @@
   <th><%= t "user.readings", count: user.readings.count %></th>
 </tr>
 <tr>
-  <th><%= t "user.favorites", count: user.favorites.count %></th>
+  <th><%= link_to (t "user.favorites", count: user.favorites.count), favorites_path(user_id: user.id) %></th>
 </tr>
 <tr>
   <th><%= t "user.comments", count: user.comments.count %></th>
