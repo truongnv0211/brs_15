@@ -93,12 +93,13 @@ en:
     total-like: "Total Like"
     new-user: "new-user"
   book:
-    add-favorite: "Add to Favorite !!"
-    remove-favorite: "Remove Favorite !!"
-    mark-reading: "Mark As Reading !!!"
-    mark-read: "Mark As Read !!!"
-    write-review: "Write Review !!"
-    create-review: "Create Review !!"
+    add-favorite: "Add to Favorite"
+    remove-favorite: "Remove Favorite"
+    mark-reading: "Mark As Reading"
+    mark-readed: "Mark As Readed"
+    mark-unread: "Mark As UnRead"
+    write-review: "Write Review"
+    create-review: "Create Review"
     update-review: "Update Review"
     from-user: "%{num_rating} from %{num_review} review"
     review-create-success: "Review create successfully"
@@ -114,4 +115,5 @@ en:
     review-update-success: "Review update successfully"
     review-delete-success: "Review delete successfully"
     review-create-failed: "Review create failed"
-
+  readings:
+    error: "Error database!"

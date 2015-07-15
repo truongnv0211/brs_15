@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :requests, only: [:index, :create, :destroy]
   resources :users, only: [:index, :show]
   resources :favorites, only: [:index, :create, :destroy]
+  resources :readings, only: [:create, :update, :destroy]
 
   namespace :admin do
     root "dashboards#home"

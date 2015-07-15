@@ -1,0 +1,3 @@
+$(".reading-button").html("<%= escape_javascript(render("books/reading_button")) %>");
+$(".reading-notice").html("<%= escape_javascript(render("shared/notice",
+    type: Settings.notice.type.error, notice: t("readings.error")))%>");
