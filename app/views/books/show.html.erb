@@ -21,7 +21,7 @@
       </tr>
       <tr>
         <th><%= t "book.rate-avg" %>:</th>
-        <td>
+        <td id="star_avg_rating">
           <%= render "star", rating: @book.rate %>
           (<%= t "book.from-user", num_rating: @book.rate, num_review: @book.reviews.count %>)
         </td>
@@ -40,7 +40,7 @@
 <hr>
 <div id="review-form">
   <h3><%= t "book.write-new-review" %></h3>
-  <%= render "reviews/review_form" %>
+  <%= render "reviews/review_form", review: @new_review %>
 </div>
 <div>
   <h3><%= t "book.review" %></h3>

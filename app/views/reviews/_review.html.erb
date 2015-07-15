@@ -1,6 +1,6 @@
 <div id="review-<%= review.id %>" class="row">
   <div class="col-sx-8">
-    <%= link_to gravatar_for(review.user, size: Settings.review.picutre_size50, class: "img-rounded img-thumbnail"), review.user %>
+    <%= link_to gravatar_for(review.user, size: Settings.review.picture_size50, class: "img-rounded img-thumbnail"), review.user %>
   </div>
   <div class="col-sx-2">
     <div class="panel panel-default">
@@ -15,6 +15,33 @@
             <%= render "star", rating: review.rating %>
           </div>
         </h3>
+        <% if can?(:update, review) %>
+          <%= link_to t("Update"), "#", "data-toggle": "modal", "data-target": "#edit_review_#{review.id}",
+            class: "btn btn-gray btn-sm thinner-padding" %>
+          <div class="modal fade" id="<%= "edit_review_#{review.id}" %>"
+            tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel"><%= t "review.edit-review" %></h4>
+                </div>
+                <div class="modal-body">
+                  <%= render "reviews/edit_modal", modal: true, review: review %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <%= t "review.close" %>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <% if can?(:destroy, review) %>
+            <%= link_to t("Delete"), review_path(review), method: :delete,remote: true,
+          data: {confirm: t("feature.question")}, class: "btn btn-gray btn-sm thinner-padding" %>
+        <% end %>
       </div>
       <div class="panel-footer">
         <div class="mg-left">
