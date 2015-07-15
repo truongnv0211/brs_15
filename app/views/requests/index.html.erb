@@ -11,20 +11,47 @@
     <div class="col-md-10">
       <br><br><br><br><br>
       <%= render "users/header", user: @user %>
+      <br>
+
+      <h3><%= t "requests.request_title" %></h3>
+
       <div class="table-responsive">
-        <table class="table table-border">
-          <tr>
-            <td class="active"><h4><b><%= t "requests.book_name" %></b></h4>
-            </td>
-            <td class="success"><h4><b><%= t "requests.author" %></b></h4></td>
-            <td class="warning"><h4><b><%= t "requests.description" %></b></h4>
-            </td>
-            <td class="info"><h4><b><%= t "requests.status" %></b></h4></td>
-            <td class="danger"><h4><b><%= t "requests.action" %></b></h4></td>
-          </tr>
-          <%= render @requests %>
-          <%= will_paginate %>
+        <table id="request-list" class="table table-border">
+          <thead>
+            <tr>
+              <td class="active"><h4><b><%= t "requests.book_name" %></b></h4>
+              </td>
+              <td class="success"><h4><b><%= t "requests.author" %></b></h4></td>
+              <td class="warning"><h4><b><%= t "requests.description" %></b></h4>
+              </td>
+              <td class="info"><h4><b><%= t "requests.status" %></b></h4></td>
+              <td class="danger"><h4><b><%= t "requests.action" %></b></h4></td>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @requests %>
+          </tbody>
         </table>
+        <%= will_paginate %>
+        <div>
+          <%= link_to t("feature.create"), "#", "data-toggle" => "modal",
+                      remote: true, "data-target" => "#request_form-modal",
+                      class: "btn btn-primary btn-lg" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="request_form-modal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal">
+        </button>
+        <h2 class="modal-title"><%= t "requests.create_request" %></h2>
+      </div>
+      <div class="modal-body">
+        <%= render "create_form" %>
       </div>
     </div>
   </div>
