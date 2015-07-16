@@ -1,0 +1,29 @@
+<div class="reading-button">
+  <div class="btn-group btn-block">
+    <% @reading_status = current_user.find_status @book %>
+    <button type="button" class="btn btn-block btn-primary btn-block dropdown-toggle"
+      data-toggle="dropdown">
+      <%= @reading_status.capitalize %>&nbsp;&nbsp;&nbsp;
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <% if Settings.reading_status[0] == @reading_status %>
+        <li><%= link_to t("book.mark-reading"), readings_path(user_id: current_user.id,
+          book_id: @book.id, status: :reading), method: :post, remote: true %></li>
+        <li><%= link_to t("book.mark-readed"), readings_path(user_id: current_user.id,
+          book_id: @book.id, status: :readed), method: :post, remote: true %></li>
+      <% else %>
+        <li><%= link_to_unless(Settings.reading_status[1] == @reading_status,
+          t("book.mark-reading"), reading_path(current_user.readings.find_by(book_id: @book.id),
+            user_id: current_user.id, book_id: @book.id, status: :reading),
+              method: :patch, remote: true ){} %></li>
+        <li><%= link_to_unless(Settings.reading_status[2] == @reading_status,
+          t("book.mark-readed"), reading_path(current_user.readings.find_by(book_id: @book.id),
+            user_id: current_user.id, book_id: @book.id, status: :readed),
+              method: :patch, remote: true ){} %></li>
+        <li><%= link_to t("book.mark-unread"), current_user.readings.find_by(book_id: @book.id),
+          method: :delete, remote: true %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

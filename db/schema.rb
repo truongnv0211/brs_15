@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20150714020600) do
   end
 
   create_table "readings", force: :cascade do |t|
-    t.string   "status"
+    t.integer  "status"
     t.integer  "user_id"
     t.integer  "book_id"
     t.datetime "created_at", null: false
