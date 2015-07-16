@@ -109,6 +109,7 @@ en:
   requests:
     request_title: "Requests List"
     edit_request: "Edit Request"
+    request: "Infomation Request"
     book_name: "Name"
     author: "Author"
     description: "Description"

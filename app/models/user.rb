@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   has_many :reading_books, through: :readings, source: :book
 
   def set_default_role
-    self.role ||= :user
+    self.role ||= :normal
   end
 
   def add_favorite book

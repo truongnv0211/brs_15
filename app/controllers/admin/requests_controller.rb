@@ -1,5 +1,5 @@
 class Admin::RequestsController < ApplicationController
-  before_action :request_set, only: [:show, :edit, :update]
+  load_and_authorize_resource
 
   def index
     @requests = Request.paginate page: params[:page],
@@ -30,9 +30,6 @@ class Admin::RequestsController < ApplicationController
   end
 
   private
-  def request_set
-    @request = Request.find params[:id]
-  end
 
   def request_params
     params.require(:request).permit :book_name, :author, :description, :status
