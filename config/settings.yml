@@ -2,6 +2,7 @@ number:
   per_page: 10
   short_miximum: 5
   user_per_page: 15
+  user_per_page_2: 6
   count: 5
   round: 2
 admin:
@@ -54,3 +55,7 @@ notice:
     success: "success"
     danger: "danger"
     error: "error"
+following_type: "following"
+follow_type:
+  - following
+  - followers
