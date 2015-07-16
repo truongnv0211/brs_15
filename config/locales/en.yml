@@ -57,6 +57,7 @@ en:
     question: "Are you sure???"
     submit: "Submit"
     create: "Create"
+    update: "Update"
   user:
     favorite: "Favorite"
     reading: "Reading"
@@ -105,12 +106,15 @@ en:
     review-create-success: "Review create successfully"
   requests:
     request_title: "Requests List"
+    edit_request: "Edit Request"
     book_name: "Name"
     author: "Author"
     description: "Description"
     status: "Status"
     action: "Action"
     create_request: "Create Request Form"
+    update_request: "Request was successfully updated."
+    update_error: "Requests was update failed"
     destroy_success: "Request was destroy successfully"
     review-update-success: "Review update successfully"
     review-delete-success: "Review delete successfully"
