@@ -14,9 +14,11 @@
   <th><%= t "user.requests", count: user.requests.count %></th>
 </tr>
 <tr>
-  <th><%= t "user.following", count: user.following.count %></th>
+  <th>
+    <%= link_to (t "user.following", count: user.following.count), follow_path(id: user.id, type: "following") %>
+  </th>
 </tr>
 <tr>
-  <th><%= t "user.followers", count: user.followers.count %></th>
+  <th><%= link_to (t "user.followers", count: user.followers.count), follow_path(id: user.id, type: "followers") %></th>
 </tr>
 <tr><th></th></tr>

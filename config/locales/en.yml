@@ -69,6 +69,8 @@ en:
     comments: "Comments %{count}"
     favorites: "Favorites %{count}"
     requests: "Requests %{count}"
+    follow: "Follow"
+    unfollow: "Unfollow"
     following: "Following %{count}"
     followers: "Followers %{count}"
     confirm: "Confirm"
@@ -117,3 +119,5 @@ en:
     review-create-failed: "Review create failed"
   readings:
     error: "Error database!"
+  following: "Following"
+  followers: "Followers"
