@@ -19,7 +19,7 @@ admin:
     min_number_page: 1
     min_title_length: 6
 roles:
-  - user
+  - normal
   - admin
 roles_status:
   - Waiting

@@ -1,24 +1,24 @@
-<div class="col-md-6 col-md-offset-1">
-  <div class="container">
-    <strong><%= t "requests.book_name" %></strong>
-    <%= @request.book_name %>
-  </div>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><%= t "requests.request" %></div>
 
-  <div class="container">
-    <strong><%= t "requests.author" %></strong>
-    <%= @request.author %>
+  <!-- Table -->
+  <table class="table">
+    <tr>
+      <td class="info"><strong><%= t "requests.book_name" %></strong></td>
+      <td class="success"><strong><%= t "requests.author" %></strong></td>
+      <td class="warning"><strong><%= t "requests.description" %></strong></td>
+      <td class="danger"><strong><%= t "requests.status" %></strong></td>
+    </tr>
+    <tr>
+      <td class="info"> <%= @request.book_name %></td>
+      <td class="success"><%= @request.author %></td>
+      <td class="warning"><%= @request.description %></td>
+      <td class="danger"><%= @request.status %></td>
+    </tr>
+  </table>
+  <div class="panel-footer">
+    <%= link_to t("feature.edit"), edit_admin_request_path(@request), class: "btn btn-warning" %>
+    <%= link_to t("feature.back"), admin_requests_path, class: "btn btn-info" %>
   </div>
-
-  <div class="container">
-    <strong><%= t "requests.description" %></strong>
-    <%= @request.description %>
-  </div>
-
-  <div class="container">
-    <strong><%= t "requests.status" %></strong>
-    <%= @request.status %>
-  </div>
-
-  <%= link_to t "feature.edit", edit_admin_request_path(@request) %>
-  <%= link_to t "feature.back", admin_requests_path %>
 </div>
