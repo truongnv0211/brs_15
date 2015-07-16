@@ -8,6 +8,16 @@ class RequestsController < ApplicationController
                                       per_page: Settings.number.per_page
   end
 
+  def create
+    @request = Request.new request_params
+    if @request.save
+      respond_to do |format|
+        format.js
+        format.html {redirect_to :back}
+      end
+    end
+  end
+
   def destroy
     @request.destroy
     respond_to do |format|
