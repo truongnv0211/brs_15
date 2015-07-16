@@ -16,6 +16,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "dashboards#home"
+    resources :requests do
+      collection do
+        post :batch_update
+      end
+    end
     resources :categories
     resources :books
     resources :users, except: [:edit, :update]

@@ -1,0 +1,8 @@
+<h1><%= t "requests.edit_request" %></h1>
+
+<%= render "form" %>
+
+<div class="col-md-offset-1">
+  <%= link_to t "feature.show", [:admin, @request] %>
+  <%= link_to t "feature.back", admin_requests_path %>
+</div>
