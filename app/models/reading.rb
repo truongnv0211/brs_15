@@ -5,7 +5,14 @@ class Reading < ActiveRecord::Base
   belongs_to :book
   belongs_to :user
 
+  after_create :activity_read
+
   def default_status
     self.status ||= :reading
+  end
+
+  private
+  def activity_read
+    Activity.create action: "read|#{self.book.id}|", user_id: self.user.id
   end
 end
