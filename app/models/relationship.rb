@@ -1,19 +1,13 @@
 class Relationship < ActiveRecord::Base
+  include ActivitiesModel
+
   belongs_to :follower, class_name: "User"
   belongs_to :followed, class_name: "User"
 
   validates :follower_id, presence: true
   validates :followed_id, presence: true
 
-  after_create :activity_follow
-  before_destroy :activity_unfollow
+  after_create {create_activity :follow, self.followed_id, self.follower_id}
+  before_destroy {create_activity :unfollow, self.followed_id, self.follower_id}
 
-  private
-  def activity_follow
-    Activity.create! action_type: :follow, action_target: self.followed_id, user_id: self.follower_id
-  end
-
-  def activity_unfollow
-    Activity.create! action_type: :unfollow, action_target: self.followed_id, user_id: self.follower_id
-  end
 end

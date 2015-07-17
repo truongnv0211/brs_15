@@ -1,10 +1,8 @@
 class Comment < ActiveRecord::Base
+  include ActivitiesModel
+
   belongs_to :review
   belongs_to :user
 
-  after_create :activity_comment
-
-  def activity_comment
-    Activity.create! action_type: :comment, action_target: self.id, user_id: self.user.id
-  end
+  after_create {create_activity :comment, self.id, self.user.id}
 end

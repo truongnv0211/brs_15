@@ -1,9 +1,11 @@
 class Review < ActiveRecord::Base
+  include ActivitiesModel
+
   belongs_to :book
   belongs_to :user
   has_many :comments, dependent: :destroy
 
-  after_create :activity_review
+  after_create {create_activity :review, self.id, self.user.id}
   after_save :set_avarage_rating
   after_destroy :set_avarage_rating
 
@@ -12,9 +14,5 @@ class Review < ActiveRecord::Base
     rate = self.book.reviews.average :rating
     book.rate = rate if rate
     book.save
-  end
-
-  def activity_review
-    Activity.create! action_type: :review, action_target: self.id, user_id: self.user.id
   end
 end
