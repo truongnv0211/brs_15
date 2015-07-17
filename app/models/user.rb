@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
                        dependent: :destroy
   has_many :favorited_books, through: :favorites, source: :book
   has_many :reading_books, through: :readings, source: :book
+  has_many :read_books, ->{where readings: {status: Settings.number.round}}, through: :readings,
+                                                         source: :book
 
   def set_default_role
     self.role ||= :normal

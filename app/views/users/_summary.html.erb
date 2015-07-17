@@ -1,24 +1,42 @@
 <tr>
-  <th><%= t "user.readings", count: user.readings.count %></th>
-</tr>
-<tr>
-  <th><%= link_to (t "user.favorites", count: user.favorites.count), favorites_path(user_id: user.id) %></th>
-</tr>
-<tr>
-  <th><%= t "user.comments", count: user.comments.count %></th>
-</tr>
-<tr>
-  <th><%= t "user.activities", count: user.activities.count %></th>
-</tr>
-<tr>
-  <th><%= t "user.requests", count: user.requests.count %></th>
-</tr>
-<tr>
   <th>
-    <%= link_to (t "user.following", count: user.following.count), follow_path(id: user.id, type: "following") %>
+    <%= link_to t("user.readings"), user_readings_path(user) %>
+    <span class="badge"><%= user.readings.count %></span>
   </th>
 </tr>
 <tr>
-  <th><%= link_to (t "user.followers", count: user.followers.count), follow_path(id: user.id, type: "followers") %></th>
+  <th>
+    <%= link_to t("user.favorites"), favorites_path(user) %>
+    <span class="badge"><%= user.favorites.count %></span>
+  </th>
 </tr>
-<tr><th></th></tr>
+<tr>
+  <th>
+    <%= link_to t("user.comments"), "#" %>
+    <span class="badge"><%= user.comments.count %></span>
+  </th>
+</tr>
+<tr>
+  <th>
+    <%= link_to t("user.activities"), "#" %>
+    <span class="badge"><%= user.activities.count %></span>
+  </th>
+</tr>
+<tr>
+  <th>
+    <%= link_to t("user.requests"), requests_path(user) %>
+    <span class="badge"><%= user.requests.count %></span>
+  </th>
+</tr>
+<tr>
+  <th>
+    <%= link_to t("user.following"), follow_path(user, Settings.following_type) %>
+    <span class="badge"><%= user.following.count %></span>
+  </th>
+</tr>
+<tr>
+  <th>
+    <%= link_to t("user.followers"), follow_path(user, Settings.follower_type) %>
+    <span class="badge"><%= user.followers.count %></span>
+  </th>
+</tr>
