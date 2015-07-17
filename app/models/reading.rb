@@ -21,6 +21,6 @@ class Reading < ActiveRecord::Base
 
   private
   def activity_read
-    Activity.create action: "read|#{self.book.id}|", user_id: self.user.id
+    Activity.create action_type: :read, action_target: self.id, user_id: self.user.id
   end
 end
