@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-4">
+    <%= form_for @user do |f| %>
+
+      <%= render "shared/error", object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %><br>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control" %><br>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control" %><br>
+
+      <% if @user.id.present? %>
+        <div class="gravatar_edit">
+          <%= gravatar_for @user, size: Settings.user.gravantar_size150 %>
+          <a href="http://gravatar.com/emails" target="_blank"><%= t "user.change" %></a>
+          <br><br>
+        </div>
+      <% end %>
+
+      <%= f.submit t("feature.submit"), class: "btn btn-primary form-control" %>
+    <% end %>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 class Reading < ActiveRecord::Base
   include ActivitiesModel
-  enum status: Settings.reading_status
+
+  enum status: [:unread, :reading, :readed]
   after_initialize :default_status, if: :new_record?
   after_create {create_activity :read, self.book.id, self.user.id}
 
