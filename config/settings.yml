@@ -1,3 +1,24 @@
+activity_type_list:
+  - favorite
+  - read
+  - review
+  - comment
+  - follow
+  - unfollow
+reading_status:
+  - unread
+  - reading
+  - readed
+roles:
+  - normal
+  - admin
+roles_status:
+  - Waiting
+  - Accept
+  - Decline
+follow_type:
+  - following
+  - followers
 number:
   per_page: 10
   short_miximum: 5
@@ -19,17 +40,6 @@ admin:
     max_number_page: 50000
     min_number_page: 1
     min_title_length: 6
-roles:
-  - normal
-  - admin
-roles_status:
-  - Waiting
-  - Accept
-  - Decline
-reading_status:
-  - unread
-  - reading
-  - readed
 user:
   gravantar_size230: 230
   gravantar_size150: 150
@@ -57,6 +67,5 @@ notice:
     error: "error"
 following_type: "following"
 follower_type: "followers"
-follow_type:
-  - following
-  - followers
+activities:
+  pages: 6
