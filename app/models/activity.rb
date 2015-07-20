@@ -28,7 +28,7 @@ class Activity < ActiveRecord::Base
   end
 
   def translate_follow
-    follow = User.findself.action_target rescue nil
+    follow = User.find self.action_target rescue nil
     follow ? I18n.t("activities.translate.follow", name: self.user.name, follow_name: follow.name)
       : I18n.t("activities.translate.follow_nil", name: self.user.name, id: self.action_target)
   end

@@ -1,0 +1,2 @@
+$("#activity-form-<%= @activity.id %>").html('<%= escape_javascript(render "activities/unlike", activity: @activity) %>');
+$("#number-liker-<%= @activity.id %>").html('<%= t "activities.num_like", count: @activity.likes.count %>');

@@ -1,0 +1,13 @@
+<span class="glyphicon glyphicon-thumbs-up color-like" class="form-inline">
+</span>
+<em id="number-liker-<%= activity.id %>" class="form-inline color-like">
+  <%= t "activities.num_like", count: activity.likes.count %>
+</em>
+<div id="activity-form-<%= activity.id %>">
+  <% if activity.likes.find_by(user_id: current_user).present? %>
+    <%= render "activities/unlike", activity: activity %>
+  <% else %>
+    <%= render "activities/like", activity: activity %>
+  <% end %>
+</div>
+

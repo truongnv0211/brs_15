@@ -1,0 +1,3 @@
+<%= form_for [activity, Like.new], remote: true do |f| %>
+  <%= f.submit t("user.like"), class: "btn btn-link btn-sm form-inline" %>
+<% end %>

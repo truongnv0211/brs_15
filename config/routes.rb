@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index, :create, :destroy]
   resources :readings, except: [:edit, :new, :show]
   resources :relationships, only: [:create, :destroy]
-  resources :activities, only: [:index]
+  resources :activities, only: [:index] do
+    resources :likes, only: [:create, :destroy]
+  end
 
   get "/users/:id/:type" => "relationships#index", as: "follow"
 

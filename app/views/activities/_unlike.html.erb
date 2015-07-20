@@ -1,0 +1,4 @@
+<%= form_for [activity, activity.likes.find_by(user_id: current_user.id)],
+  html: {method: :delete}, remote: true do |f| %>
+  <%= f.submit t("user.unlike"), class: "btn btn-sm btn-link" %>
+<% end %>
