@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+</head>
+<body>
+  <h1>
+    <%= t "mail.header" %>
+    <%= @request.book_name %>
+    <%= @request.author %>
+  </h1></br>
+  <p><%= @user.name %><%= t "mail.accept_book" %></p></br>
+  <p><%= t "mail.thank" %></p>
+</body>
+</html>
