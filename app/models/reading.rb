@@ -1,7 +1,8 @@
 class Reading < ActiveRecord::Base
+  include ActivitiesModel
   enum status: Settings.reading_status
   after_initialize :default_status, if: :new_record?
-  after_create :activity_read
+  after_create {create_activity :read, self.book.id, self.user.id}
 
   belongs_to :book
   belongs_to :user
@@ -17,10 +18,5 @@ class Reading < ActiveRecord::Base
       reading.update_attributes status: params[:status]
       reading
     end
-  end
-
-  private
-  def activity_read
-    Activity.create action_type: :read, action_target: self.id, user_id: self.user.id
   end
 end
