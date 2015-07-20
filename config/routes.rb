@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :comments
   resources :requests, only: [:index, :create, :destroy]
-  resources :users, only: [:index, :show] do
+  resources :users, except: [:new, :create, :destroy] do
     resources :readings, only: :index
   end
   resources :favorites, only: [:index, :create, :destroy]

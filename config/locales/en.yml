@@ -81,6 +81,8 @@ en:
     commented: "commented"
     like: "Like"
     unlike: "Unlike"
+    success_update_profile: "Success update profile!"
+    unsuccess_update_profile: "Unsuccess update profile!"
   books:
     favorite: "Favorited"
     rating: "Rating"

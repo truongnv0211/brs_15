@@ -1,6 +1,6 @@
 <tr>
-  <th><%= link_to t("user.readings"), user_readings_path(user) %></th>
-  <th align="right"><span class="badge"><%= user.readings.count %></span></th>
+  <th><%= link_to t("user.history_read_book"), user_readings_path(user) %></th>
+  <th align="right"><span class="badge"><%= user.read_books.count %></span></th>
 </tr>
 <tr>
   <th><%= link_to t("user.favorites"), favorites_path(user_id: user.id) %></th>

@@ -4,18 +4,18 @@
       <br>
       <%= gravatar_for @user, size: Settings.user.gravantar_size150 %>
       <br><br>
+      <table class="table">
+        <%= render "users/summary", user: @user %>
+      </table>
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-2">
-    <table class="table">
-      <%= render "users/summary", user: @user %>
-    </table>
-  </div>
-  <div class="col-md-10">
-    <div class="container-fluid">
-      <%= render @reading_books %>
+    <div class="col-md-10">
+    <br><br><br><br><br>
+      <%= render "users/header", user: @user %>
+      <h3><%= t "user.history_books"%></h3>
+      <div class="col-md-12">
+        <%= render @read_books %>
+      </div>
+      <%= will_paginate @read_books %>
     </div>
   </div>
 </div>

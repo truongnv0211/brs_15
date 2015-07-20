@@ -6,9 +6,8 @@ class ReadingsController < ApplicationController
 
   def index
     @user ||= current_user
-    @reading_books = @user.reading_books
-                          .paginate page: params[:page],
-                                    per_page: Settings.admin.books.pages
+    @read_books = @user.read_books
+                       .paginate page: params[:page], per_page: Settings.admin.books.pages
   end
 
   def create
