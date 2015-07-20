@@ -146,3 +146,8 @@ en:
       unfollow_nil: "%{name} unfollow user that deleted with id : %{id}"
       review: "%{name} write review in book %{column}"
       review_nil: "%{name} write review that deleted with id : %{id}"
+  mail:
+    header: "[Book-Review-System] Something good is comming !!!"
+    thank: "Thank you"
+    new-comment-body: "comment in you review. Body of comment:"
+    new-review-body: " have created new review."
