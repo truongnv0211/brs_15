@@ -10,7 +10,7 @@ gem "jbuilder"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "bootstrap-sass"
 gem "will_paginate"
-gem 'bootstrap-will_paginate', '0.0.10'
+gem "bootstrap-will_paginate", "0.0.10"
 gem "devise"
 gem "faker"
 gem "ransack"
@@ -22,6 +22,7 @@ gem "jquery-ui-rails"
 gem "jquery-turbolinks"
 gem "cancancan"
 gem "best_in_place", "~> 3.0.1"
+gem "whenever", require: false
 
 group :development, :test do
   gem "byebug"
