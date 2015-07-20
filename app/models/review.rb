@@ -8,11 +8,16 @@ class Review < ActiveRecord::Base
   after_create {create_activity :review, self.id, self.user.id}
   after_save :set_avarage_rating
   after_destroy :set_avarage_rating
+  after_commit :send_email_new_review, on: :create
 
   private
   def set_avarage_rating
     rate = self.book.reviews.average :rating
     book.rate = rate if rate
     book.save
+  end
+
+  def send_email_new_review
+    ReviewsWorker.perform_async self.book.id
   end
 end

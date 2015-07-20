@@ -23,6 +23,7 @@ gem "jquery-turbolinks"
 gem "cancancan"
 gem "best_in_place", "~> 3.0.1"
 gem "whenever", require: false
+gem "sidekiq"
 
 group :development, :test do
   gem "byebug"

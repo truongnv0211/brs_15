@@ -89,3 +89,4 @@ following_type: "following"
 follower_type: "followers"
 activities:
   pages: 6
+mail_default: "no-reply@brs.framgia.com"
