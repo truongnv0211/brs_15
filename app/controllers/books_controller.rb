@@ -13,7 +13,9 @@ class BooksController < ApplicationController
   end
 
   def show
-    @reviews = @book.reviews.includes :user, :comments
+    @reviews = @book.reviews.includes(:user, :comments).order_reviews
+                            .paginate page: params[:page],
+                                      per_page: Settings.number.review_per_page
     @comment = current_user.comments.build
     @new_review = current_user.reviews.build
   end
