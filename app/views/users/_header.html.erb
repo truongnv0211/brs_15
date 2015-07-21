@@ -7,10 +7,11 @@
     </td >
     <td align="right">
       <% if can? :edit, user %>
-         <a href="<%= edit_user_path(current_user.id) %>">
+        <%= link_to edit_user_path(user.id) do %>
           <h3 style="color: white">
             <span class="glyphicon glyphicon-cog" align="right"></span>
           </h3>
+        <% end %>
         </a>
       <% end %>
     </td>

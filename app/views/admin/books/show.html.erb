@@ -1,7 +1,8 @@
 <div class="row">
   <div class="col-md-3" align="center">
-    <%= render "picture", book: @book, height: Settings.admin.books.picture_height300,
-      width: Settings.admin.books.picture_width300 %>
+    <%= link_to image_tag(@book.picture_url,
+      height: Settings.admin.books.picture_height300,
+      width: Settings.admin.books.picture_width300), @book %>
     <br><br>
     <table class="w100pc">
       <tr>
