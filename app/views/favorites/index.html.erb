@@ -16,7 +16,7 @@
         <%= render @books %>
       </div>
       <%= will_paginate @books %>
-      <%= render "suggest_books", suggest_books: @suggest_books if @user || current_user %>
+      <%= render "suggest_books", suggest_books: @suggest_books if current_user == @user%>
     </div>
   </div>
 </div>

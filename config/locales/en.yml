@@ -83,6 +83,7 @@ en:
     unlike: "Unlike"
     success_update_profile: "Success update profile!"
     unsuccess_update_profile: "Unsuccess update profile!"
+    name_contain: "Name contain"
   books:
     favorite: "Favorited"
     rating: "Rating"
