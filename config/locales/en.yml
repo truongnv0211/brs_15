@@ -153,3 +153,6 @@ en:
     thank: "Thank you"
     new-comment-body: "comment in you review. Body of comment:"
     new-review-body: " have created new review."
+    subject: "Your request book has accepted"
+    accept_book: "This book has accepted by admin Book System"
+
