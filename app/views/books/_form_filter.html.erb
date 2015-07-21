@@ -1,33 +1,36 @@
-<ul class="nav nav-pills">
-  <li role="presentation" class="<%= !params[:favorite].present? ? "active" : "" %>">
-    <a href="<%= books_path %>">All Books</a>
-  </li>
-  <li role="presentation" class="<%= params[:favorite].present? ? "active" : "" %>">
-    <a href="<%= books_path({favorite: true}) %>"><%= t "books.favorite" %></a>
-  </li>
-</ul>
-<div class="well">
-  <%= search_form_for @search do |f| %>
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <%= f.label :category_id %>
-        <%= f.select :category_id_eq,
-          options_from_collection_for_select(@categories, :id, :name),
-          {}, class: "form-control" %>
-      </div>
-      <div class="navbar-header">
-        <%= f.label :title %>
-        <%= f.search_field :title_cont, class: "form-control" %>
-      </div>
-      <div class="navbar-header">
-        <%= f.label :rate %>
-        <%= f.select :rate, options_for_select(%w(All 1 2 3 4 5)), {} ,class: "form-control" %>
-      </div>
-      <div class="navbar-header">
-        <%= f.label :action %>
-        <br>
-        <%= f.submit t("books.submit"), class: "btn btn-default button-width" %>
-      </div>
+<div class="tabbable-panel">
+  <div class="tabbable-line">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="<%= !params[:favorite].present? ? "active" : "" %>">
+        <a href="<%= books_path %>"><%= t "books.all-book" %></a>
+      </li>
+      <li role="presentation" class="<%= params[:favorite].present? ? "active" : "" %>">
+        <a href="<%= books_path({favorite: true}) %>"><%= t "books.favorite" %></a>
+      </li>
+    </ul>
+  </div>
+</div><br>
+<%= search_form_for @search do |f| %>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= f.label :category_id %>
+      <%= f.select :category_id_eq,
+        options_from_collection_for_select(@categories, :id, :name),
+        {}, class: "form-control" %>
     </div>
-  <% end %>
-</div>
+    <div class="navbar-header">
+      <%= f.label :title %>
+      <%= f.search_field :title_cont, class: "form-control" %>
+    </div>
+    <div class="navbar-header">
+      <%= f.label :rate %>
+      <%= f.select :rate, options_for_select(%w(All 1 2 3 4 5)), {} ,class: "form-control" %>
+    </div>
+    <div class="navbar-header">
+      <%= f.label :action %>
+      <br>
+      <%= f.submit t("books.submit"), class: "btn btn-default button-width" %>
+    </div>
+  </div>
+<% end %>
+

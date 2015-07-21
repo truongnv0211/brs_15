@@ -1,21 +1,31 @@
-<div id="comment-<%= comment.id %>">
-  <div class="panel panel-default">
-    <div class="panel-header">
-      <h4><%= comment.user.name %> <%= t "books.commented" %>
-        <abbr title="<%= comment.created_at %>">
-          <%= time_ago_in_words(comment.created_at) %>
-        </abbr>
-      </h4>
-    </div>
-    <div class="panel-footer">
-      <% if can?(:update, comment) %>
-        <%= best_in_place comment, :content %>
-        <%= link_to t("comment.edit"), "#" %>
-        <%= link_to t("comment.delete"), comment_path(comment), method: :delete,remote: true,
-          data: {confirm: t("feature.question")} %>
-      <% else %>
-        <%= comment.content %>
-      <% end %>
+<div id="comment-<%= comment.id %>" class="comment">
+  <div class="col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-0 hidden-xs">
+     <figure class="thumbnail">
+      <%= link_to gravatar_for(comment.user, size: Settings.review.picture_size50, class: "img-responsive"), comment.user %>
+      <figcaption class="text-center"><%= comment.user.name %></figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong><%= comment.user.name %> <%= t "books.commented" %></strong>
+        <span class="text-muted">
+          <em>
+            <abbr title="<%= comment.created_at %>">
+              <%= time_ago_in_words(comment.created_at) %>
+            </abbr>
+          </em>
+        </span>
+      </div>
+      <div class="panel-body">
+        <% if can?(:update, comment) %>
+          <%= best_in_place comment, :content %>
+          <%= link_to t("comment.delete"), comment_path(comment), method: :delete,remote: true,
+            data: {confirm: t("feature.question")}, class: "btn btn-sm btn-danger pull-right" %>
+        <% else %>
+          <%= comment.content %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

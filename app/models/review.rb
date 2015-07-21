@@ -9,6 +9,7 @@ class Review < ActiveRecord::Base
   after_save :set_avarage_rating
   after_destroy :set_avarage_rating
   after_commit :send_email_new_review, on: :create
+  scope :order_reviews, ->{order created_at: :DESC}
 
   private
   def set_avarage_rating

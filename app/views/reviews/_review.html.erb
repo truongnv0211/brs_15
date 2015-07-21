@@ -1,57 +1,70 @@
 <div id="review-<%= review.id %>" class="row">
-  <div class="col-sx-8">
-    <%= link_to gravatar_for(review.user, size: Settings.review.picture_size50, class: "img-rounded img-thumbnail"), review.user %>
-  </div>
-  <div class="col-sx-2">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          <div class="panel-body">
-            <%= link_to review.user.name, review.user %>
-            <br>
-            <strong><%= review.subject %></strong>
-            <br>
-            <%= review.content %>
-            <%= render "star", rating: review.rating %>
-          </div>
-        </h3>
-        <% if can?(:update, review) %>
-          <%= link_to t("Update"), "#", "data-toggle": "modal", "data-target": "#edit_review_#{review.id}",
-            class: "btn btn-gray btn-sm thinner-padding" %>
-          <div class="modal fade" id="<%= "edit_review_#{review.id}" %>"
-            tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title" id="myModalLabel"><%= t "review.edit-review" %></h4>
-                </div>
-                <div class="modal-body">
-                  <%= render "reviews/edit_modal", modal: true, review: review %>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">
-                    <%= t "review.close" %>
-                  </button>
-                </div>
+<div class="col-md-9">
+    <div class"review-list">
+      <article class="row">
+        <div class="col-md-2 col-sm-2 hidden-xs">
+          <figure class="thumbnail">
+            <%= link_to gravatar_for(review.user, size: Settings.review.picture_size50, class: "img-responsive"), review.user %>
+            <figcaption class="text-center"><%= review.user.name %></figcaption>
+          </figure>
+        </div>
+        <div class="col-md-10 col-sm-10">
+          <div class="panel panel-default arrow left">
+            <div class="panel-heading">
+              <%= review.subject %>
+              <%= render "star", rating: review.rating %>
+            </div>
+            <div class="panel-body">
+              <div class="review-post">
+                <p><%= review.content %></p>
               </div>
+              <p class="text-right">
+                <% if can?(:update, review) %>
+                  <%= link_to t("Update"), "#", "data-toggle": "modal", "data-target": "#edit_review_#{review.id}",
+                    class: "btn btn-warning btn-sm pull-right" %>
+                  <div class="modal fade" id="<%= "edit_review_#{review.id}" %>"
+                    tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title" id="myModalLabel"><%= t "review.edit-review" %></h4>
+                        </div>
+                        <div class="modal-body">
+                          <%= render "reviews/edit_modal", modal: true, review: review %>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <%= t "review.close" %>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+                <% if can?(:destroy, review) %>
+                  <%= link_to t("Delete"), review_path(review), method: :delete,remote: true,
+                  data: {confirm: t("feature.question")}, class: "btn btn-danger btn-sm pull-right" %>
+                <% end %>
+              </p>
             </div>
           </div>
-        <% end %>
-        <% if can?(:destroy, review) %>
-            <%= link_to t("Delete"), review_path(review), method: :delete,remote: true,
-          data: {confirm: t("feature.question")}, class: "btn btn-gray btn-sm thinner-padding" %>
-        <% end %>
-      </div>
-      <div class="panel-footer">
-        <div class="mg-left">
-          <div class="comments" id="comment-review-<%= review.id %>">
-            <%= render review.comments %>
-          </div>
-          <% review.comments.build %>
-          <%= render "comments/comment_form", review: review %>
         </div>
-      </div>
+      </article>
+      <article>
+        <div class="row comments" id="comment-review-<%= review.id %>">
+          <%= render review.comments %>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+          </div>
+          <div class="col-md-9">
+            <% review.comments.build %>
+            <%= render "comments/comment_form", review: review %>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </div>
+
