@@ -14,7 +14,7 @@ class Review < ActiveRecord::Base
   private
   def set_avarage_rating
     rate = self.book.reviews.average :rating
-    book.rate = rate if rate
+    book.rate = self.book.reviews.any? ? rate : 0
     book.save
   end
 

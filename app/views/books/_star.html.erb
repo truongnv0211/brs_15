@@ -1,5 +1,10 @@
-<div class="rating">
-  <div style="width:<%= (rating/Settings.number.count*100).round(Settings.number.round) %>%">
-    <span class="glyphicon stars" title="<%= t "books.rating" %>: <%= rating %>"></span>
-  </div>
-</div>
+<ul class="list-inline list-unstyled">
+  <% 5.times do |n| %>
+    <% if n < rating %>
+      <span class="glyphicon glyphicon-star"></span>
+    <% else %>
+      <span class="glyphicon glyphicon-star-empty"></span>
+    <% end %>
+  <% end %>
+</ul>
+

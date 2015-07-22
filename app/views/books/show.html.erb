@@ -1,51 +1,57 @@
 <br><br>
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-4">
     <%= image_tag @book.picture_url,
-      height: Settings.books.picutre_height330, width: Settings.books.picture_width250 %><br><br>
-  </div>
-  <div class="col-md-9">
-    <h1><%= @book.title %></h1>
+      height: Settings.books.picutre_height400, width: Settings.books.picture_width300 %>
     <table class="table table-hover">
-      <tr>
+      <tr class="success">
         <th><%= t "book.author" %>:</th>
         <td><%= @book.author %></td>
       </tr>
-      <tr>
+      <tr class="warning">
         <th><%= t "book.publish-date" %>:</th>
         <td><%= @book.publish_date %></td>
       </tr>
-      <tr>
+      <tr class="success">
         <th><%= t "book.category" %>:</th>
         <td><%= @book.category.name %></td>
       </tr>
-      <tr>
+      <tr class="danger">
         <th><%= t "book.rate-avg" %>:</th>
         <td id="star_avg_rating">
-          <%= render "star", rating: @book.rate %>
-          (<%= t "book.from-user", num_rating: @book.rate, num_review: @book.reviews.count %>)
+          <%= t "book.from-user", num_rating: @book.rate, num_review: @book.reviews.count %>
         </td>
       </tr>
     </table>
+  </div>
+  <div class="col-md-8">
+    <h1><%= @book.title %></h1>
     <div>
       <h3><%= t "book.content" %></h3>
-      <em><%= @book.content %></em>
+      <em><%= @book.content %></em><br><br>
+      <%= render "book_button" %>
+    </div><br><br>
+    <div class="panel with-nav-tabs panel-success">
+      <div class="panel-heading">
+        <ul class="nav nav-tabs">
+          <li><a href="#tab1success" data-toggle="tab"><%= t ("write-new-review") %></a></li>
+          <li class="active"><a href="#tab2success" data-toggle="tab"><%= t ("review-and-comment") %></a></li>
+        </ul>
+      </div>
+      <div class="panel-body">
+        <div class="tab-content">
+          <div class="tab-pane fade" id="tab1success">
+            <h3><%= t "book.write-new-review" %></h3>
+            <%= render "reviews/review_form", review: @new_review %>
+          </div>
+          <div class="tab-pane fade in active" id="tab2success">
+            <div class="review">
+              <%= render @reviews if @reviews.any? %>
+            </div>
+            <%= will_paginate @reviews %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<hr>
-<div class="row">
-  <%= render "book_button" %>
-</div>
-<hr>
-<div id="review-form">
-  <h3><%= t "book.write-new-review" %></h3>
-  <%= render "reviews/review_form", review: @new_review %>
-</div>
-<div>
-  <h3><%= t "book.review" %></h3>
-</div>
-<div class="review">
-  <%= render @reviews if @reviews.any? %>
-</div>
-<%= will_paginate @reviews %>

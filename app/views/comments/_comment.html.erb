@@ -1,11 +1,6 @@
 <div id="comment-<%= comment.id %>" class="comment">
-  <div class="col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-0 hidden-xs">
-     <figure class="thumbnail">
-      <%= link_to gravatar_for(comment.user, size: Settings.review.picture_size50, class: "img-responsive"), comment.user %>
-      <figcaption class="text-center"><%= comment.user.name %></figcaption>
-    </figure>
-  </div>
-  <div class="col-sm-9">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-10">
     <div class="panel panel-default">
       <div class="panel-heading">
         <strong><%= comment.user.name %> <%= t "books.commented" %></strong>
