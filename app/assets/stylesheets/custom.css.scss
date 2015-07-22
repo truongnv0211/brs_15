@@ -177,10 +177,6 @@ footer {
     }
   }
 }
-
-#review-form{
-  display: none;
-}
 .review {
   list-style: none;
   padding: 0;
@@ -310,4 +306,29 @@ li.rating_star.on {
   .review-list .review-post {
     margin-top: 6px;
   }
+}
+.with-nav-tabs .panel-success .nav-tabs > li > a,
+.with-nav-tabs .panel-success .nav-tabs > li > a:hover,
+.with-nav-tabs .panel-success .nav-tabs > li > a:focus {
+  color: #3c763d;
+}
+.with-nav-tabs .panel-success .nav-tabs > .open > a,
+.with-nav-tabs .panel-success .nav-tabs > .open > a:hover,
+.with-nav-tabs .panel-success .nav-tabs > .open > a:focus,
+.with-nav-tabs .panel-success .nav-tabs > li > a:hover,
+.with-nav-tabs .panel-success .nav-tabs > li > a:focus {
+  color: #3c763d;
+  background-color: #d6e9c6;
+  border-color: transparent;
+}
+.with-nav-tabs .panel-success .nav-tabs > li.active > a,
+.with-nav-tabs .panel-success .nav-tabs > li.active > a:hover,
+.with-nav-tabs .panel-success .nav-tabs > li.active > a:focus {
+  color: #3c763d;
+  background-color: #fff;
+  border-color: #d6e9c6;
+  border-bottom-color: transparent;
+}
+.show-rating-review{
+  margin-left: 10px;
 }

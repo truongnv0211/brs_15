@@ -20,10 +20,6 @@ $(function(){
   });
 });
 
-$(document).on("click", "#create-review", function(){
-  $("#review-form").show();
-})
-
 $(document).ready(function(){
 
   $(document).bind('ajaxError', 'form#edit_review', function(event, jqxhr, settings, exception){

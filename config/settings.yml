@@ -71,8 +71,8 @@ favorites:
   create: "create"
   destroy: "destroy"
 books:
-  picutre_height330: 330
-  picture_width250: 250
+  picutre_height400: 505
+  picture_width3000: 400
   mg-left: 100px
   requested_day: 7
 review:

@@ -1,1 +1,2 @@
+$("#star_avg_rating").html("<%= t "book.from-user", num_rating: @review.book.rate , num_review: @review.book.reviews.count %>");
 $("#review-<%= @review.id %>").remove();

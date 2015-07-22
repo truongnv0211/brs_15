@@ -24,6 +24,6 @@
 </tr>
 <tr>
   <th><%= link_to t("user.followers"), follow_path(user, Settings.follower_type) %></th>
-  <th align="right"><span class="badge"><%= user.followers.count %></span></th>
+  <th align="right"><span class="badge" id="followers"><%= user.followers.count %></span></th>
 </tr>
 <tr><th></th><th></th></tr>
