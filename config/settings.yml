@@ -67,6 +67,7 @@ user:
   pages: 12
   picutre_height330: 330
   picture_width250: 250
+  admin: 1
 favorites:
   create: "create"
   destroy: "destroy"
