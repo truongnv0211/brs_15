@@ -157,4 +157,5 @@ en:
     new-review-body: " have created new review."
     subject: "Your request book has accepted"
     accept_book: "This book has accepted by admin Book System"
-
+    admin_rating_books_subject: "Rating books summary"
+    admin_rating_books_start: "Hi %{name}, this is rating books summary"

@@ -24,6 +24,8 @@ gem "cancancan"
 gem "best_in_place", "~> 3.0.1"
 gem "whenever", require: false
 gem "sidekiq"
+gem "delayed_job_active_record"
+gem "daemons"
 
 group :development, :test do
   gem "byebug"

@@ -20,4 +20,9 @@ class UserMailer < ApplicationMailer
     @user_mail = request.user.email
     mail to: @user_mail, subject: t("mail.subject")
   end
+
+  def email_admin_rating_books
+    @admin = User.find_by(role: Settings.user.admin) rescue nil
+    mail to: @admin.email, subject: t("mail.admin_rating_books_subject") if @admin
+  end
 end

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h3><%= t "mail.admin_rating_books_start", name: @admin.name %></h3>
+    <% if Book.any? %>
+      <table class="table">
+        <tr>
+          <th align="center"><%= t "book.index" %></th>
+          <th align="center"><%= t "book.book_title" %></th>
+          <th align="center"><%= t "book.book_rate" %></th>
+        </tr>
+        <tr><th colspan="3"><hr></th></tr>
+        <% Book.all.each_with_index do |book, index| %>
+          <tr>
+            <td align="center"><%= index %></td>
+            <td><%= book.title %></td>
+            <td align="center"><%= book.rate %></td>
+          </tr>
+          <tr><th colspan="3"><hr></th></tr>
+        <% end %>
+      </table>
+    <% end %>
+    <%= t "mail.thank" %>
+  </body>
+</html>
