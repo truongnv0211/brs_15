@@ -15,7 +15,7 @@
     <div class="navbar-header">
       <%= f.label :category_id %>
       <%= f.select :category_id_eq,
-        options_from_collection_for_select(@categories, :id, :name),
+        options_from_collection_for_select(@categories, :id, :name, params[:query][:category_id_eq]),
         {}, class: "form-control" %>
     </div>
     <div class="navbar-header">
@@ -25,6 +25,9 @@
     <div class="navbar-header">
       <%= f.label :rate %>
       <%= f.select :rate, options_for_select(%w(All 1 2 3 4 5)), {} ,class: "form-control" %>
+    </div>
+    <div>
+      <%= hidden_field_tag :favorite, params[:favorite] %>
     </div>
     <div class="navbar-header">
       <%= f.label :action %>
