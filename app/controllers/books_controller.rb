@@ -5,11 +5,12 @@ class BooksController < ApplicationController
 
   def index
     @categories = Category.all
-    books = params[:favorite].present? ? current_user.favorited_books : Book.all
+    books = params[:favorite] == "true" ? current_user.favorited_books : Book.all
     @search = books.ransack params[:query]
     @books = @search.result(distinct: true)
                     .paginate page: params[:page],
                               per_page: Settings.admin.books.pages
+    params[:query] ||= {}
   end
 
   def show
