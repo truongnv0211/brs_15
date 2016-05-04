@@ -1,0 +1,24 @@
+.row
+  .col-md-6.col-md-offset-1
+    = form_for [:admin, @request] do |f|
+      = render "shared/error", object: f.object
+      .field
+        = f.label :book_name
+        %br/
+        = f.text_field :book_name
+      .field
+        = f.label :author
+        %br/
+        = f.text_field :author
+      .field
+        = f.label :description
+        %br/
+        = f.text_field :description
+      .field
+        = f.label :status
+        %br/
+        = f.select(:status, Settings.roles_status, {})
+        %br/
+      %br/
+      .actions
+        = f.submit

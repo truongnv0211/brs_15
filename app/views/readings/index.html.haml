@@ -1,0 +1,14 @@
+.row
+  .bg-img
+    .col-md-2{:align => "center"}
+      %br/
+      = gravatar_for @user, size: Settings.user.gravantar_size150
+      %br/
+      %br/
+.row
+  .col-md-2
+    %table.table
+      = render "users/summary", user: @user
+  .col-md-10
+    .container-fluid
+      = render @reading_books

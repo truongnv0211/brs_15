@@ -1,0 +1,47 @@
+%br/
+%br/
+.row
+  .col-md-3
+    = image_tag @book.picture_url,                                                     |
+      height: Settings.books.picutre_height330, width: Settings.books.picture_width250 |
+    %br/
+    %br/
+  .col-md-9
+    %h1= @book.title
+    %table.table.table-hover
+      %tr
+        %th
+          = t "book.author"
+          \:
+        %td= @book.author
+      %tr
+        %th
+          = t "book.publish-date"
+          \:
+        %td= @book.publish_date
+      %tr
+        %th
+          = t "book.category"
+          \:
+        %td= @book.category.name
+      %tr
+        %th
+          = t "book.rate-avg"
+          \:
+        %td#star_avg_rating
+          = render "star", rating: @book.rate
+          (#{t "book.from-user", num_rating: @book.rate, num_review: @book.reviews.count})
+    %div
+      %h3= t "book.content"
+      %em= @book.content
+%hr/
+.row
+  = render "book_button"
+%hr/
+#review-form
+  %h3= t "book.write-new-review"
+  = render "reviews/review_form", review: @new_review
+%div
+  %h3= t "book.review"
+.review
+  = render @reviews if @reviews.any?

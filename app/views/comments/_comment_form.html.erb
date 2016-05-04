@@ -1,8 +1,0 @@
-<%= form_for review.comments.build, remote: true, method: :post do |f| %>
-  <%= f.hidden_field :review_id, value: review.id %>
-  <%= f.label :content %>
-  <%= f.text_area :content, class: "form-control" %><br>
-
-  <%= f.submit t("books.confirm"), class: "btn btn-primary pull-right" %>
-
-<% end %><br><br>

@@ -1,0 +1,37 @@
+.row{:id => "review-#{review.id}"}
+  .col-sx-8
+    = link_to gravatar_for(review.user, size: Settings.review.picture_size50, class: "img-rounded img-thumbnail"), review.user
+  .col-sx-2
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title
+          .panel-body
+            = link_to review.user.name, review.user
+            %br/
+            %strong= review.subject
+            %br/
+            = review.content
+            = render "star", rating: review.rating
+        - if can?(:update, review)
+          = link_to t("Update"), "#", "data-toggle": "modal", "data-target": "#edit_review_#{review.id}", |
+            class: "btn btn-gray btn-sm thinner-padding"                                                  |
+          .modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :id => "edit_review_#{review.id}", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                  %h4#myModalLabel.modal-title= t "review.edit-review"
+                .modal-body
+                  = render "reviews/edit_modal", modal: true, review: review
+                .modal-footer
+                  %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+                    = t "review.close"
+        - if can?(:destroy, review)
+          = link_to t("Delete"), review_path(review), method: :delete,remote: true,              |
+            data: {confirm: t("feature.question")}, class: "btn btn-gray btn-sm thinner-padding" |
+      .panel-footer
+        .mg-left
+          .comments{:id => "comment-review-#{review.id}"}
+            = render review.comments
+          - review.comments.build
+          = render "comments/comment_form", review: review

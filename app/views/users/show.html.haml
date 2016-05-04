@@ -1,0 +1,19 @@
+.row
+  .bg-img
+    .col-md-2{:align => "center"}
+      %br/
+      = gravatar_for @user, size: Settings.user.gravantar_size150
+      %br/
+      %br/
+      = render "follow_form", user: @user
+      %br/
+      %br/
+      %table.table
+        = render "summary", user: @user
+    .col-md-10
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      = render "users/header", user: @user

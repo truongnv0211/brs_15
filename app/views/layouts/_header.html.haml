@@ -1,0 +1,26 @@
+%body
+  %header.navbar.navbar-fixed-top.navbar-inverse
+    .container
+      = link_to t("static_page.title"), root_path, id: "logo"
+      %nav
+        %ul.nav.navbar-nav.navbar-right
+          %li= link_to t("static_page.home"), root_path
+          - if user_signed_in?
+            %li= link_to t("user.all-book"), books_path
+            %li= link_to t("user.all-user"), users_path
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                = t "User"
+                %b.caret
+              %ul.dropdown-menu
+                %li= link_to t("user.profile"), current_user
+                %li= link_to t("user.favorite"), "#"
+                %li= link_to t("user.reading"), "#"
+                %li= link_to t("user.history_read_book"), "#"
+                %li= link_to t("user.request"), requests_path
+                %li.divider{:role => "separator"}
+                %li= link_to t("static_page.log_out"), destroy_user_session_path, method: :delete
+            - if current_user.admin?
+              %li= link_to t("user.administration"), admin_root_path
+          - else
+            %li= link_to t("static_page.log_in"), new_user_session_path

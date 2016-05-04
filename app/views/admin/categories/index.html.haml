@@ -1,0 +1,13 @@
+%p#notice= notice
+%h1= t "admin.category.list-title"
+%table.table.table-striped
+  %thead
+    %tr
+      %th= t "admin.name"
+      %th= t "admin.content"
+      %th{:colspan => "3"}
+  %tbody
+    = render @categories
+= will_paginate
+%br/
+= link_to t("admin.category.new-category"), new_admin_category_path

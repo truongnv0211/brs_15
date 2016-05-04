@@ -1,3 +1,0 @@
-$("#comment-review-<%= @comment.review_id %>")
-  .append("<%= j render "comments/comment_partial", comment: @comment %>")
-  .next().find("textarea").val("");

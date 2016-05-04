@@ -1,0 +1,15 @@
+.row
+  .col-md-6.col-md-offset-1
+    = form_for [:admin, @category] do |f|
+      = render "shared/error", object: f.object
+      .field
+        = f.label :name
+        %br/
+        = f.text_field :name, class: "form-control", require: true
+      .field
+        = f.label :content
+        %br/
+        = f.text_field :content, class: "form-control", require: true
+      %br/
+      .actions
+        = f.submit t("admin.category.create-category"), class: "btn btn-primary"

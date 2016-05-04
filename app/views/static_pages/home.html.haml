@@ -1,0 +1,6 @@
+- provide :title, t("static_page.home")
+.center.jumbotron
+  %h1= t "static_page.intro_home"
+  %p= t "static_page.home_description"
+  - unless user_signed_in?
+    = link_to t("static_page.sign_up"), new_user_registration_path, class: "btn btn-primary"

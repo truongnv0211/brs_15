@@ -1,0 +1,23 @@
+.panel.panel-default
+  / Default panel contents
+  .panel-heading= t "requests.request"
+  / Table
+  %table.table
+    %tr
+      %td.info
+        %strong= t "requests.book_name"
+      %td.success
+        %strong= t "requests.author"
+      %td.warning
+        %strong= t "requests.description"
+      %td.danger
+        %strong= t "requests.status"
+    %tr
+      %td.info
+        = @request.book_name
+      %td.success= @request.author
+      %td.warning= @request.description
+      %td.danger= @request.status
+  .panel-footer
+    = link_to t("feature.edit"), edit_admin_request_path(@request), class: "btn btn-warning"
+    = link_to t("feature.back"), admin_requests_path, class: "btn btn-info"

@@ -1,0 +1,5 @@
+.col-xs-2
+  %br/
+  = link_to image_tag(book.picture_url, height: Settings.admin.books.picture_height, width: Settings.admin.books.picture_width), book
+  %br/
+  %h6.color-gray-10= render "books/summary", book: book

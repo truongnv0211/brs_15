@@ -1,0 +1,8 @@
+.col-xs-2
+  %br/
+  = link_to gravatar_for(user, size: Settings.user.gravantar_size150), user
+  %br/
+  %h4= user.name.truncate(Settings.user.max_string)
+  %h6.color-gray-10
+  %table.color-gray-8
+    = render "users/summary", user: user

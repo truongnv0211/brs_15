@@ -1,0 +1,6 @@
+.row
+  .col-sm-6.col-md-8
+    .caption
+      %h4= link_to book.title.truncate(Settings.admin.books.max_string), "#"
+      %p= book.author
+      = render "books/star", rating: book.rate

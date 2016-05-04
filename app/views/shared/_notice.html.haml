@@ -1,0 +1,5 @@
+.reading-notice
+  - if Settings.notice.type.success == type
+    %font{:color => "green"}= notice
+  - else
+    %font{:color => "red"}= notice

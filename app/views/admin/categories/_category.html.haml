@@ -1,0 +1,11 @@
+%tr
+  %td= category.name
+  %td= category.content
+  %td
+    = form_for [:admin, category] do |f|
+      = hidden_field_tag "category[activate]", !category.activate
+      = f.submit t(category.activate? ? "admin.category.deactivate" : "admin.category.activate")
+  %td= link_to t("feature.show"), admin_category_path(category), class:"btn btn-info"
+  %td= link_to t("feature.edit"), edit_admin_category_path(category), class:"btn btn-warning"
+  %td= link_to t("feature.destroy"), admin_category_path(category), class:"btn btn-danger", method: :delete, |
+      data: {confirm: t("feature.question")}                                                                |

@@ -1,0 +1,52 @@
+.row
+  .bg-img
+    .col-md-2{:align => "center"}
+      %br/
+      = gravatar_for @user, size: Settings.user.gravantar_size150
+      %br/
+      %br/
+      %table.table
+        = render "users/summary", user: @user
+    .col-md-10
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      = render "users/header", user: @user
+      %br/
+      %h3= t "requests.request_title"
+      .table-responsive
+        %table#request-list.table.table-border
+          %thead
+            %tr
+              %td.active
+                %h4
+                  %b= t "requests.book_name"
+              %td.success
+                %h4
+                  %b= t "requests.author"
+              %td.warning
+                %h4
+                  %b= t "requests.description"
+              %td.info
+                %h4
+                  %b= t "requests.status"
+              %td.danger
+                %h4
+                  %b= t "requests.action"
+          %tbody
+            = render @requests
+        = will_paginate
+        %div
+          = link_to t("feature.create"), "#", "data-toggle" => "modal", |
+            remote: true, "data-target" => "#request_form-modal",       |
+            class: "btn btn-primary btn-lg"                             |
+#request_form-modal.modal.fade
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"}
+        %h2.modal-title= t "requests.create_request"
+      .modal-body
+        = render "create_form"

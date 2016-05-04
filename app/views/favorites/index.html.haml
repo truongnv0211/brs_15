@@ -1,0 +1,21 @@
+.row
+  .bg-img
+    .col-md-2{:align => "center"}
+      %br/
+      = gravatar_for @user, size: Settings.user.gravantar_size150
+      %br/
+      %br/
+      %table.table
+        = render "users/summary", user: @user
+    .col-md-10
+      %br/
+      %br/
+      %br/
+      %br/
+      %br/
+      = render "users/header", user: @user
+      %h3= t "favorite.favorites"
+      .col-md-12
+        = render @books
+      = will_paginate @books
+      = render "suggest_books", suggest_books: @suggest_books if @user || current_user

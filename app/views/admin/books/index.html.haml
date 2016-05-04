@@ -1,0 +1,9 @@
+.row
+  = render @books if @books.any?
+.row
+  .col-xs-10{:align => "left"}
+    = will_paginate @books
+  .col-xs-2{:align => "right"}
+    %br/
+    %br/
+    = button_to t("admin.new_book"), [:new, :admin, :book], class: "btn btn-primary w150", method: :get

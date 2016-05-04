@@ -1,0 +1,3 @@
+.add-favorite
+  = link_to t("book.remove-favorite"), current_user.favorites.find_by(book_id: @book.id), |
+    class: "btn btn-danger btn-block", method: :delete, remote: true                      |

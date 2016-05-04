@@ -22,11 +22,13 @@ gem "jquery-ui-rails"
 gem "jquery-turbolinks"
 gem "cancancan"
 gem "best_in_place", "~> 3.0.1"
+gem "haml"
 
 group :development, :test do
   gem "byebug"
   gem "sqlite3"
   gem "web-console", "~> 2.0"
   gem "spring"
+  gem "erb2haml"
 end
 

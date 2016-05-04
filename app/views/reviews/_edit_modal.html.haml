@@ -1,0 +1,25 @@
+- modal ||= false
+- remote = modal ? true : false
+= form_for(review, html: {role: :form, "data-model": "review"}) do |f|
+  - if review.errors.any?
+    = render "shared/error"
+  %div
+    = f.label :rating, class: "control-label"
+    %br/
+    = f.select(:rating, (0..Settings.admin.books.max_rate).to_a, {}, {class: "form-control"})
+    %span.help-block
+  %div
+    = f.hidden_field :user_id, value: review.user.id
+    = f.hidden_field :book_id, value: review.book.id
+  .form-group
+    = f.label :subject, class: "control-label"
+    %br/
+    = f.text_field :subject, class: "form-control", require: true
+    %span.help-block
+  .form-group
+    = f.label :content, class: "control-label"
+    %br/
+    = f.text_field :content, class: "form-control", require: true
+    %span.help-block
+  .actions
+    = f.submit "Submit", class: "btn btn-default"

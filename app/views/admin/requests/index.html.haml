@@ -1,0 +1,15 @@
+%h1= t "requests.request_title"
+= form_tag batch_update_admin_requests_path do
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= t "requests.book_name"
+        %th= t "requests.author"
+        %th= t "requests.description"
+        %th= t "requests.status"
+        %th{:colspan => "3"}
+    %tbody
+      = render @requests
+  %div
+    = submit_tag t "feature.update"
+- will_paginate

@@ -1,0 +1,13 @@
+= form_for :request, remote: true, method: :post do |f|
+  .form-group
+    = f.label :book_name
+    = f.text_field :book_name, class: "form-control"
+  .form-group
+    = f.label :author
+    = f.text_field :author, class: "form-control"
+  .form-group
+    = f.label :description
+    = f.text_area :description, class: "form-control"
+  = f.hidden_field :user_id, value: current_user.id
+  = f.submit t("books.submit"), class: "btn btn-primary submit-button"
+  = f.submit "Cancel", type: :reset, class: "btn btn-grey", data: {dismiss: :modal}

@@ -1,0 +1,7 @@
+%tr
+  %td.active= request.book_name
+  %td.success= request.author
+  %td.warning= request.description
+  %td.info= request.status
+  %td.danger
+    = link_to "Delete", request, method: :delete, data: {confirm: t("feature.destroy")}

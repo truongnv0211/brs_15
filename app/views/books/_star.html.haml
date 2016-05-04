@@ -1,0 +1,3 @@
+.rating
+  %div{:style => "width:#{(rating/Settings.number.count*100).round(Settings.number.round)}%"}
+    %span.glyphicon.stars{:title => "#{t "books.rating"}: #{rating}"}

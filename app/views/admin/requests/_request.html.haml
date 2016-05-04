@@ -1,0 +1,10 @@
+%tr
+  %td= request.book_name
+  %td= request.author
+  %td= request.description
+  %td
+    = select_tag "requests[#{request.id}][status]",             |
+      options_for_select(Settings.roles_status, request.status) |
+  %td= link_to t("feature.show"), [:admin, request], class: "btn btn-success"
+  %td
+    = link_to t("feature.edit"), edit_admin_request_path(request), class: "btn btn-info"

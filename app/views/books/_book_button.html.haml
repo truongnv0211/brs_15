@@ -1,0 +1,11 @@
+.col-md-2
+  = link_to t("book.write-review"), "#", class: "btn btn-primary btn-block", id: "create-review"
+.col-md-2
+  - if current_user.added_favorite? @book
+    = render "remove_favorite"
+  - else
+    = render "add_favorite"
+.col-md-2
+  = render "reading_button"
+.col-md-2
+  = render "shared/notice", type: "", notice: ""

@@ -1,0 +1,6 @@
+%h1= t "requests.edit_request"
+= render "form"
+%br/
+.col-md-offset-1
+  = link_to t("feature.show"), [:admin, @request], class: "btn btn-primary"
+  = link_to t("feature.back"), admin_requests_path, class: "btn btn-primary"

@@ -1,0 +1,28 @@
+%tr
+  %th
+    = link_to t("user.readings"), user_readings_path(user)
+    %span.badge= user.readings.count
+%tr
+  %th
+    = link_to t("user.favorites"), favorites_path(user)
+    %span.badge= user.favorites.count
+%tr
+  %th
+    = link_to t("user.comments"), "#"
+    %span.badge= user.comments.count
+%tr
+  %th
+    = link_to t("user.activities"), "#"
+    %span.badge= user.activities.count
+%tr
+  %th
+    = link_to t("user.requests"), requests_path(user)
+    %span.badge= user.requests.count
+%tr
+  %th
+    = link_to t("user.following"), follow_path(user, Settings.following_type)
+    %span.badge= user.following.count
+%tr
+  %th
+    = link_to t("user.followers"), follow_path(user, Settings.follower_type)
+    %span.badge= user.followers.count

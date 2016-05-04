@@ -1,0 +1,33 @@
+%table
+  %tr
+    %th.w15pc= t "books.title"
+    %td
+      \: #{book.title[0..Settings.admin.books.max_string]}
+  %tr
+    %th= t "books.category"
+    %td
+      \: #{book.category.name}
+  %tr
+    %th= t "books.author"
+    %td
+      \: #{book.author}
+  %tr
+    %th= t "books.publish"
+    %td
+      \: #{book.publish_date}
+  %tr
+    %th= t "books.no_page"
+    %td
+      \: #{book.number_page}
+  %tr
+    %th= t "books.rate"
+    %td
+      \: #{book.rate}
+  %tr
+    %th= t "books.favorite"
+    %td
+      \: #{book.favorites.count}
+  %tr
+    %th= t "books.review"
+    %td
+      \: #{book.reviews.count}

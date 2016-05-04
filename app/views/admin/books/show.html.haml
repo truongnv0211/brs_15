@@ -1,0 +1,40 @@
+.row
+  .col-md-3{:align => "center"}
+    = render "picture", book: @book, height: Settings.admin.books.picture_height300, |
+      width: Settings.admin.books.picture_width300                                   |
+    %br/
+    %br/
+    %table.w100pc
+      %tr
+        %th= button_to t("admin.edit"), [:edit, :admin, @book], class: "btn btn-primary btn-block", method: :get
+        %th   
+        %th= button_to t("admin.back"), [:admin, :books], class: "btn btn-primary btn-block", method: :get
+  .col-md-9
+    %h3= @book.title.capitalize
+    %br/
+    %table.table.table-hover
+      %tr
+        %th.w15pc= t "books.category:"
+        %td= @book.category.name
+      %tr
+        %th= t "books.author:"
+        %td= @book.author
+      %tr
+        %th= t "books.publish_date:"
+        %td= @book.publish_date
+      %tr
+        %th= t "books.number_page:"
+        %td= @book.number_page
+      %tr
+        %th= t "books.rate:"
+        %td= @book.rate
+      %tr
+        %th= t "books.favorite:"
+        %td= @book.favorites.count
+      %tr
+        %th= t "books.review:"
+        %td= @book.reviews.count
+%hr/
+%div
+  %h3= t "books.content:"
+  %em= @book.content
